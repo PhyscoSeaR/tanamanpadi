@@ -29,7 +29,7 @@ const Scan= () => {
         try {
           const response = await axios({
             method: "post",
-            url: "http://127.0.0.1:5000/predict",
+            url: "https://inspekturpadi-api-hsx2-main-t33lrugrga-wm.a.run.app/predict",
             data: formData,
             headers: { "Content-Type": "multipart/form-data" },
           });
