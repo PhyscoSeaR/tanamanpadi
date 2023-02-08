@@ -1,10 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Bree+Serif&family=Castoro&family=Roboto&family=Ubuntu:wght@500&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Bree Serif', serif, 'Ubuntu', sans-serif, 'Castoro', 'Amaranth';
+  }
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #C9FFCE;
 }
 
 code {
