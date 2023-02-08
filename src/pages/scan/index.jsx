@@ -62,7 +62,7 @@ const Scan= () => {
                         { camera && <CameraContainer /> }
                         <div className="flex flex-col pl-80 gap-10 w-[60rem] mx-auto mt-12 md:w-[94vw] md:gap-4 md:pl-0">
                                 <form onSubmit={handleSubmit} className="flex flex-wrap gap-4 h-12">
-                                    <button onClick={()=> setCamera(!camera)} className="flex flex-col w-[8rem] border-[3px] border-[#208a2a] px-4 rounded-xl min-w-[6rem] h-12 my-auto hover:bg-[#15d729] md:mx-auto">
+                                    <button onClick={()=> setCamera(!camera)} className="hidden flex-col w-[8rem] border-[3px] border-[#208a2a] px-4 rounded-xl min-w-[6rem] h-12 my-auto hover:bg-[#15d729] md:mx-auto md:flex">
                                         <span className="mx-auto my-auto" ><BiScan size={30}/></span>
                                     </button>
                                     <input  className="flex flex-col py-4 rounded-xl min-w-[4rem] my-auto md:mx-auto md:px-16" type="file" onChange={handleFileSelect}/>
