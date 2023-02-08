@@ -74,7 +74,7 @@ const CameraContainer = () => {
           : 
           <div>
             { renderButtons() }
-          <Camera idealFacingMode = {idealFacingMode} isMaxResolution = {isMaxResolution} imageType = {"jpg"} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } idealResolution = {{width: 200, height: 100}} onTakePhotoAnimationDone = {handleTakePhotoAnimationDone}
+          <Camera idealFacingMode = {idealFacingMode} isMaxResolution = {isMaxResolution} isFullscreen={true} imageType = {"jpg"} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } idealResolution = {{width: 200, height: 100}} onTakePhotoAnimationDone = {handleTakePhotoAnimationDone}
           />
           </div>
       }
