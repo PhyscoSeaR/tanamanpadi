@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {IoIosCloseCircle} from 'react-icons/io';
 import PropTypes from 'prop-types';
 import Camera from 'react-html5-camera-photo';
+import { HashLink } from 'react-router-hash-link';
 
 
 export const ImagePreview = ({ dataUri, setDataUri, data }) => {
@@ -17,6 +18,7 @@ export const ImagePreview = ({ dataUri, setDataUri, data }) => {
           <div className='flex gap-4 justify-center'>
             <span>{data.prediction}</span>
             <span>{data.presentage[0]} %</span>
+            <span> <HashLink className=" underline text-indigo-700" smooth to="/Detail">Cara Penanganan {data.prediction}</HashLink></span>
         </div>
         }
     </div>
