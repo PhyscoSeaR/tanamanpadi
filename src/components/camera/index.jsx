@@ -7,6 +7,8 @@ import axios from "axios";
 const CameraContainer = () => {
     const [dataUri, setDataUri] = useState('');
     const [data, setData] = useState("");
+    const [idealFacingMode, setIdealFacingMode] = useState(null);
+    const [isMaxResolution, setIsMaxResolution] = useState(false);  
     let img = `data:image/jpeg;base64,${dataUri}`;
     console.log(img)
 
@@ -26,6 +28,22 @@ const CameraContainer = () => {
             console.log('takePhoto');
             setDataUri(dataUri);
         }
+
+        function renderButtons () {
+            return (
+              <div>
+                <button onClick={ (e) => {
+                  setIdealFacingMode(FACING_MODES.USER);
+                  setIsMaxResolution(false);
+                }}> FACING_MODES.USER </button>
+        
+                <button onClick={ (e) => {
+                  setIdealFacingMode(FACING_MODES.ENVIRONMENT);
+                  setIsMaxResolution(true);
+                }}> FACING_MODES.ENVIRONMENT & MaxResolution</button>
+              </div>
+            );
+          }
 
         async function handleTakePhoto (dataUri) {
             const file = DataURIToBlob(dataUri)
@@ -53,8 +71,12 @@ const CameraContainer = () => {
         (dataUri)
           ? <ImagePreview data={data} setDataUri={setDataUri} dataUri={dataUri} handleTakePhotoAnimationDone={handleTakePhotoAnimationDone}
           />
-          : <Camera idealFacingMode = {FACING_MODES.ENVIRONMENT} isFullscreen = {true} imageType = {"jpg"} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } idealResolution = {{width: 200, height: 100}} onTakePhotoAnimationDone = {handleTakePhotoAnimationDone}
+          : 
+          <div>
+            { renderButtons() }
+          <Camera idealFacingMode = {idealFacingMode} isMaxResolution = {isMaxResolution} imageType = {"jpg"} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } idealResolution = {{width: 200, height: 100}} onTakePhotoAnimationDone = {handleTakePhotoAnimationDone}
           />
+          </div>
       }
            {/* <Camera idealResolution = {{width: 440, height: 200}} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } /> */}
         </div>
