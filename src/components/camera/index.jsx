@@ -7,7 +7,6 @@ import axios from "axios";
 const CameraContainer = () => {
     const [dataUri, setDataUri] = useState('');
     const [data, setData] = useState("");
-    const [idealFacingMode, setIdealFacingMode] = useState(null);
     let img = `data:image/jpeg;base64,${dataUri}`;
     console.log(img)
 
@@ -54,7 +53,7 @@ const CameraContainer = () => {
         (dataUri)
           ? <ImagePreview data={data} setDataUri={setDataUri} dataUri={dataUri} handleTakePhotoAnimationDone={handleTakePhotoAnimationDone}
           />
-          : <Camera idealFacingMode = {FACING_MODES.USER} isFullscreen = {true} imageType = {"jpg"} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } idealResolution = {{width: 200, height: 100}} onTakePhotoAnimationDone = {handleTakePhotoAnimationDone}
+          : <Camera idealFacingMode = {FACING_MODES.ENVIRONMENT} isFullscreen = {true} imageType = {"jpg"} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } idealResolution = {{width: 200, height: 100}} onTakePhotoAnimationDone = {handleTakePhotoAnimationDone}
           />
       }
            {/* <Camera idealResolution = {{width: 440, height: 200}} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } /> */}
