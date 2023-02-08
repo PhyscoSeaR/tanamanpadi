@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Camera from 'react-html5-camera-photo';
+import Camera , { FACING_MODES } from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import ImagePreview from "../imgPreview";
 import axios from "axios";
@@ -7,6 +7,7 @@ import axios from "axios";
 const CameraContainer = () => {
     const [dataUri, setDataUri] = useState('');
     const [data, setData] = useState("");
+    const [idealFacingMode, setIdealFacingMode] = useState(null);
     let img = `data:image/jpeg;base64,${dataUri}`;
     console.log(img)
 
@@ -26,6 +27,7 @@ const CameraContainer = () => {
             console.log('takePhoto');
             setDataUri(dataUri);
         }
+
         async function handleTakePhoto (dataUri) {
             const file = DataURIToBlob(dataUri)
             const formData = new FormData();
@@ -52,7 +54,7 @@ const CameraContainer = () => {
         (dataUri)
           ? <ImagePreview data={data} setDataUri={setDataUri} dataUri={dataUri} handleTakePhotoAnimationDone={handleTakePhotoAnimationDone}
           />
-          : <Camera imageType = {"jpg"} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } idealResolution = {{width: 200, height: 100}} onTakePhotoAnimationDone = {handleTakePhotoAnimationDone}
+          : <Camera idealFacingMode = {FACING_MODES.USER} isFullscreen = {true} imageType = {"jpg"} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } idealResolution = {{width: 200, height: 100}} onTakePhotoAnimationDone = {handleTakePhotoAnimationDone}
           />
       }
            {/* <Camera idealResolution = {{width: 440, height: 200}} onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } } /> */}
