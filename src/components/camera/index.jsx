@@ -31,16 +31,16 @@ const CameraContainer = () => {
 
         function renderButtons () {
             return (
-              <div>
-                <button onClick={ (e) => {
+              <div className="flex gap-4">
+                <button className="" onClick={ (e) => {
                   setIdealFacingMode(FACING_MODES.USER);
                   setIsMaxResolution(false);
-                }}> FACING_MODES.USER </button>
+                }}>Depan</button>
         
-                <button onClick={ (e) => {
+                <button className="" onClick={ (e) => {
                   setIdealFacingMode(FACING_MODES.ENVIRONMENT);
                   setIsMaxResolution(true);
-                }}> FACING_MODES.ENVIRONMENT & MaxResolution</button>
+                }}>Belakang</button>
               </div>
             );
           }
