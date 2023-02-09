@@ -30,10 +30,10 @@ const About = () => {
                                     <h3 className=" text-2xl text-center">Physco Sea Raflisoghi</h3>
                                     <h4 className=" text-sm text-center py-2 text-gray-800">UNIVERSITAS BINA INSANI</h4>
                                     <div className=" flex mx-auto py-2 gap-4">
-                                        <AiFillInstagram color="blue" size={30}/>
-                                        <AiFillLinkedin color="blue" size={30} />
-                                        <AiOutlineGithub color="blue" size={30}  />
-                                        <AiOutlineMail color="blue" size={30}  />
+                                        <a href="https://instagram.com/physcose_a?igshid=YmMyMTA2M2Y="><AiFillInstagram color="blue" size={30} /></a>
+                                        <a href="https://www.linkedin.com/in/physco-sea-raflisoghi-a85214218/"><AiFillLinkedin color="blue" size={30} /></a>
+                                        <a href="https://github.com/PhyscoSeaR"><AiOutlineGithub color="blue" size={30}  /></a>
+                                        <a href="mailto:physcosea11@gmail.com"><AiOutlineMail color="blue" size={30}  /></a>
                                     </div>
                                         <p className=" py-3 px-9 text-justify md:px-4">" Petani memberikan berkah yang luar biasa, tak hanya dinikmati bagi keberlangsungan hidup manusia, namun juga jiwa manusia menjadi sejuk melihat keindahan sawah."</p>
                                     
