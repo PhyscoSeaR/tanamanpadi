@@ -21,7 +21,7 @@ const Nav = () => {
             <div className="flex flex-col top-16 bg-transparent left-0 min-w-full gap-3 py-2">
             <Link to="/" className="text-center border-[#208a2a] border-[2px] w-full py-1">Beranda</Link>
             <Link to="/Detail" className="text-center border-[#208a2a] border-[2px] w-full py-1">Cara Penanganan</Link>
-            <Link to="/About" className="text-center border-[#208a2a] border-[2px] w-full py-1">Tentang Aplikasi</Link>
+            <Link to="/About" className="text-center border-[#208a2a] border-[2px] w-full py-1">Tentang Web</Link>
         </div>
         }
         </>
