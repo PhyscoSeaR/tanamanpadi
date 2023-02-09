@@ -13,7 +13,7 @@ const Nav = () => {
             <div className="flex justify-around w-[670px] my-auto font-bold text-lg space-x-4 md:hidden">
                 <Link to="/" className="mx-7">Beranda</Link>
                 <Link to="/Detail" className="mx-7">Cara Penanganan</Link>
-                <Link to="/About" className="mx-7">Tentang Aplikasi</Link>
+                <Link to="/About" className="mx-7">Tentang Web</Link>
             </div>
         </div>
         {
