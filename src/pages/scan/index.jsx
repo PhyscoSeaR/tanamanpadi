@@ -53,9 +53,9 @@ const Scan= () => {
                         <h2 className=" font-extrabold text-[35px] mb-4 md:text-[18px]">Silahkan Scan Padi-mu Disini !!</h2>
                         {!camera && 
                         <div className="flex justify-center gap-4 ">
-                            <HashLink smooth to="/Detail#bacterial"><img className="w-[15rem] h-[18rem] md:h-[15rem] rounded-xl" src="/img/BacterialLeafBlight.jpg" alt="" /></HashLink> 
-                            <HashLink smooth to="/Detail#brown"><img className="w-[15rem] h-[18rem] rounded-xl md:h-[15rem]" src="/img/Brownspot.jpg" alt="" /></HashLink>
-                            <HashLink smooth to="/Detail#blast"><img className="w-[15rem] h-[18rem] rounded-xl md:h-[15rem]" src="/img/Blast.jpg" alt="" /></HashLink>
+                            <HashLink smooth to="/Detail/bacterial"><img className="w-[15rem] h-[18rem] md:h-[15rem] rounded-xl" src="/img/BacterialLeafBlight.jpg" alt="" /></HashLink> 
+                            <HashLink smooth to="/Detail/brown"><img className="w-[15rem] h-[18rem] rounded-xl md:h-[15rem]" src="/img/Brownspot.jpg" alt="" /></HashLink>
+                            <HashLink smooth to="/Detail/blast"><img className="w-[15rem] h-[18rem] rounded-xl md:h-[15rem]" src="/img/Blast.jpg" alt="" /></HashLink>
                             
                         </div>
                         }
@@ -73,23 +73,23 @@ const Scan= () => {
                               
                                     {
                                         !data.presentage && 
-                                        <div className="flex flex-col bg-[#79f98600] gap-4 mt-16 p-8 w-[25rem] md:-4 md:w-[90%] md:mx-auto md:mt-[11rem]">
+                                        <div className="flex flex-col bg-[#79f98600] gap-4 mt-16 p-8 w-[25rem] md:w-[90%] md:mx-auto md:mt-[11rem]">
                                             
                                         </div>
                                     }
                                     {
                                          data.presentage && 
-                                         <div className="flex flex-col bg-[#79f986] gap-4 mt-16 p-8 w-[25rem] border-[#208a2a] border-[2px] md:-4 md:w-[90%] md:mx-auto md:mt-[11rem]">
+                                         <div className="flex flex-col bg-[#79f986] gap-4 mt-16 p-8 w-[25rem] border-[#208a2a] border-[2px] md:w-[90%] md:ml-1 md:mt-[11rem]">
                                             <span>{data.prediction}</span>
                                             <span>{data.presentage[0]} %</span>
                                             <When condition={data.prediction === "Bacterial"}>
-                                                <HashLink className=" underline text-indigo-700" smooth to="/Detail#bacterial">Cara Penanganan Bacterial</HashLink>
+                                                <HashLink className=" underline text-indigo-700" smooth to="/Detail/bacterial">Cara Penanganan Bacterial</HashLink>
                                             </When>
                                             <When condition={data.prediction === "Brown"}>
-                                                <HashLink className=" underline text-indigo-700" smooth to="/Detail#brown">Cara Penanganan Brown Spot</HashLink>
+                                                <HashLink className=" underline text-indigo-700" smooth to="/Detail/brown">Cara Penanganan Brown Spot</HashLink>
                                             </When>
                                             <When condition={data.prediction === "Blast"}>
-                                                <HashLink className=" underline text-indigo-700" smooth to="/Detail#blast">Cara Penanganan Blast</HashLink>
+                                                <HashLink className=" underline text-indigo-700" smooth to="/Detail/blast">Cara Penanganan Blast</HashLink>
                                             </When>
                                         </div>     
                                     }
